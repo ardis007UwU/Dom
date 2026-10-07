@@ -1,0 +1,8 @@
+{
+	"InstallScripts" : 
+	[
+		"/home/ardis/Desktop/Dom/tokenizer/build/release/cmake_install.cmake",
+		"/home/ardis/Desktop/Dom/tokenizer/build/release/tests/cmake_install.cmake"
+	],
+	"Parallel" : false
+}

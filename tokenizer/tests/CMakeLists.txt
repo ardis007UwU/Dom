@@ -1,0 +1,30 @@
+find_package(GTest)
+if(NOT GTest_FOUND)
+    # Try to find via pkgconfig or fallback
+    find_package(PkgConfig)
+    pkg_check_modules(GTEST gtest)
+    if(GTEST_FOUND)
+        # gtest via pkgconfig
+    endif()
+endif()
+
+# Prefer system GTest if available
+find_package(GTest QUIET)
+if(GTest_FOUND)
+    add_executable(test_pretokenizer test_pretokenizer.cpp)
+    target_link_libraries(test_pretokenizer PRIVATE tokenizer_pre GTest::GTest GTest::Main)
+    add_executable(test_bpe_trainer test_bpe_trainer.cpp)
+    target_link_libraries(test_bpe_trainer PRIVATE tokenizer_bpe GTest::GTest GTest::Main)
+else()
+    # Fallback to manual gtest linking if installed system-wide
+    add_executable(test_pretokenizer test_pretokenizer.cpp)
+    target_link_libraries(test_pretokenizer PRIVATE tokenizer_pre gtest gtest_main pthread)
+    add_executable(test_bpe_trainer test_bpe_trainer.cpp)
+    target_link_libraries(test_bpe_trainer PRIVATE tokenizer_bpe gtest gtest_main pthread)
+endif()
+
+target_include_directories(test_pretokenizer PRIVATE ${CMAKE_SOURCE_DIR}/include)
+target_include_directories(test_bpe_trainer PRIVATE ${CMAKE_SOURCE_DIR}/include)
+
+add_test(NAME pretokenizer_tests COMMAND test_pretokenizer)
+add_test(NAME bpe_trainer_tests COMMAND test_bpe_trainer)

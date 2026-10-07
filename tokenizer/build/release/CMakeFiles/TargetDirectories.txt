@@ -1,0 +1,12 @@
+/home/ardis/Desktop/Dom/tokenizer/build/release/CMakeFiles/tokenizer_pre.dir
+/home/ardis/Desktop/Dom/tokenizer/build/release/CMakeFiles/tokenize.dir
+/home/ardis/Desktop/Dom/tokenizer/build/release/CMakeFiles/tokenizer_bpe.dir
+/home/ardis/Desktop/Dom/tokenizer/build/release/CMakeFiles/train_bpe.dir
+/home/ardis/Desktop/Dom/tokenizer/build/release/CMakeFiles/test.dir
+/home/ardis/Desktop/Dom/tokenizer/build/release/CMakeFiles/edit_cache.dir
+/home/ardis/Desktop/Dom/tokenizer/build/release/CMakeFiles/rebuild_cache.dir
+/home/ardis/Desktop/Dom/tokenizer/build/release/tests/CMakeFiles/test_pretokenizer.dir
+/home/ardis/Desktop/Dom/tokenizer/build/release/tests/CMakeFiles/test_bpe_trainer.dir
+/home/ardis/Desktop/Dom/tokenizer/build/release/tests/CMakeFiles/test.dir
+/home/ardis/Desktop/Dom/tokenizer/build/release/tests/CMakeFiles/edit_cache.dir
+/home/ardis/Desktop/Dom/tokenizer/build/release/tests/CMakeFiles/rebuild_cache.dir

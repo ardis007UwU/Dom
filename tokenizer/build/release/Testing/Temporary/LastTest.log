@@ -1,0 +1,95 @@
+Start testing: Oct 07 10:43 EEST
+----------------------------------------------------------
+1/2 Testing: pretokenizer_tests
+1/2 Test: pretokenizer_tests
+Command: "/home/ardis/Desktop/Dom/tokenizer/build/release/tests/test_pretokenizer"
+Directory: /home/ardis/Desktop/Dom/tokenizer/build/release/tests
+"pretokenizer_tests" start time: Oct 07 10:43 EEST
+Output:
+----------------------------------------------------------
+Running main() from /usr/src/debug/gtest/googletest-1.18.0/googletest/src/gtest_main.cc
+[==========] Running 17 tests from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 17 tests from PreTokenizerTest
+[ RUN      ] PreTokenizerTest.Newlines
+[       OK ] PreTokenizerTest.Newlines (0 ms)
+[ RUN      ] PreTokenizerTest.UppercaseContractions
+[       OK ] PreTokenizerTest.UppercaseContractions (0 ms)
+[ RUN      ] PreTokenizerTest.DatePaths
+[       OK ] PreTokenizerTest.DatePaths (0 ms)
+[ RUN      ] PreTokenizerTest.NonBreakingSpace
+[       OK ] PreTokenizerTest.NonBreakingSpace (0 ms)
+[ RUN      ] PreTokenizerTest.LeadingAndConsecutiveSpaces
+[       OK ] PreTokenizerTest.LeadingAndConsecutiveSpaces (0 ms)
+[ RUN      ] PreTokenizerTest.CJKCharacters
+[       OK ] PreTokenizerTest.CJKCharacters (0 ms)
+[ RUN      ] PreTokenizerTest.EmojiHandling
+[       OK ] PreTokenizerTest.EmojiHandling (0 ms)
+[ RUN      ] PreTokenizerTest.WhitespaceOnly
+[       OK ] PreTokenizerTest.WhitespaceOnly (0 ms)
+[ RUN      ] PreTokenizerTest.EmptyString
+[       OK ] PreTokenizerTest.EmptyString (0 ms)
+[ RUN      ] PreTokenizerTest.InvalidUtf8Bytes
+[       OK ] PreTokenizerTest.InvalidUtf8Bytes (0 ms)
+[ RUN      ] PreTokenizerTest.NormalizerDefaultsToIdentity
+[       OK ] PreTokenizerTest.NormalizerDefaultsToIdentity (0 ms)
+[ RUN      ] PreTokenizerTest.NFKCNormalization
+[       OK ] PreTokenizerTest.NFKCNormalization (0 ms)
+[ RUN      ] PreTokenizerTest.AllNormalizationModes
+[       OK ] PreTokenizerTest.AllNormalizationModes (0 ms)
+[ RUN      ] PreTokenizerTest.PipelineComposition
+[       OK ] PreTokenizerTest.PipelineComposition (0 ms)
+[ RUN      ] PreTokenizerTest.StorageCopyInvariant
+[       OK ] PreTokenizerTest.StorageCopyInvariant (0 ms)
+[ RUN      ] PreTokenizerTest.UnknownRulesetThrows
+[       OK ] PreTokenizerTest.UnknownRulesetThrows (0 ms)
+[ RUN      ] PreTokenizerTest.O200kRuleset
+[       OK ] PreTokenizerTest.O200kRuleset (0 ms)
+[----------] 17 tests from PreTokenizerTest (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 17 tests from 1 test suite ran. (1 ms total)
+[  PASSED  ] 17 tests.
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"pretokenizer_tests" end time: Oct 07 10:43 EEST
+"pretokenizer_tests" time elapsed: 00:00:00
+----------------------------------------------------------
+
+2/2 Testing: bpe_trainer_tests
+2/2 Test: bpe_trainer_tests
+Command: "/home/ardis/Desktop/Dom/tokenizer/build/release/tests/test_bpe_trainer"
+Directory: /home/ardis/Desktop/Dom/tokenizer/build/release/tests
+"bpe_trainer_tests" start time: Oct 07 10:43 EEST
+Output:
+----------------------------------------------------------
+Running main() from /usr/src/debug/gtest/googletest-1.18.0/googletest/src/gtest_main.cc
+[==========] Running 5 tests from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 5 tests from BpeTrainerTest
+[ RUN      ] BpeTrainerTest.BaseByteVocabulary
+[       OK ] BpeTrainerTest.BaseByteVocabulary (0 ms)
+[ RUN      ] BpeTrainerTest.PreTokenBoundaryRestriction
+[       OK ] BpeTrainerTest.PreTokenBoundaryRestriction (0 ms)
+[ RUN      ] BpeTrainerTest.DeterministicTieBreaking
+[       OK ] BpeTrainerTest.DeterministicTieBreaking (0 ms)
+[ RUN      ] BpeTrainerTest.MiniCorpusExactMerges
+[       OK ] BpeTrainerTest.MiniCorpusExactMerges (0 ms)
+[ RUN      ] BpeTrainerTest.CorpusReaderStreaming
+[       OK ] BpeTrainerTest.CorpusReaderStreaming (0 ms)
+[----------] 5 tests from BpeTrainerTest (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 5 tests from 1 test suite ran. (0 ms total)
+[  PASSED  ] 5 tests.
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"bpe_trainer_tests" end time: Oct 07 10:43 EEST
+"bpe_trainer_tests" time elapsed: 00:00:00
+----------------------------------------------------------
+
+End testing: Oct 07 10:43 EEST
