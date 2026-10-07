@@ -4,7 +4,7 @@
 // <repo-root>/VERSION file. Do NOT edit by hand; bump VERSION and re-run
 // CMake configuration instead.
 
-#define DOMLM_VERSION_STRING "2.1.0"
-#define DOMLM_VERSION_MAJOR 2
-#define DOMLM_VERSION_MINOR 1
+#define DOMLM_VERSION_STRING "3.0.0"
+#define DOMLM_VERSION_MAJOR 3
+#define DOMLM_VERSION_MINOR 0
 #define DOMLM_VERSION_PATCH 0

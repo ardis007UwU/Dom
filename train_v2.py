@@ -4,7 +4,7 @@
 Pipeline: uint16 ``train.bin``/``valid.bin`` (see scripts/prepare_dataset.py)
 -> PagedStreamer (bounded-RAM random pages, bulk disk reads amortized over
 dozens of batches) -> GQA DomSLMv2 -> AdamW + warmup/cosine, grad accumulation,
-tok/s + TFLOPS logging, ``dom_v2_checkpoint.pt`` saver (+ best).
+tok/s + TFLOPS logging, ``dom_v3_checkpoint.pt`` saver (+ ``dom_v3_best.pt``).
 
 Requires: torch>=2.0, numpy. Optional ``--gen-prompt`` demo decodes with the
 v2 byte vocabulary (no extra dependencies).
@@ -145,7 +145,7 @@ def parse_args(argv=None):
     ap.add_argument("--eval-every", type=int, default=200)
     ap.add_argument("--eval-batches", type=int, default=20)
     ap.add_argument("--ckpt-every", type=int, default=500)
-    ap.add_argument("--ckpt-name", default="dom_v2_checkpoint.pt")
+    ap.add_argument("--ckpt-name", default="dom_v3_checkpoint.pt")
     ap.add_argument("--resume", default="")
     ap.add_argument("--seed", type=int, default=1337)
     ap.add_argument("--compile", action="store_true")
@@ -279,7 +279,7 @@ def main(argv=None) -> int:
                             "model": model.state_dict(),
                             "optim": opt.state_dict(),
                             "val_loss": val},
-                           os.path.join(args.out_dir, "dom_v2_best.pt"))
+                           os.path.join(args.out_dir, "dom_v3_best.pt"))
         if (step + 1) % args.ckpt_every == 0 or (step + 1) == args.max_steps:
             torch.save({"step": step, "config": vars(args),
                         "model": model.state_dict(),
