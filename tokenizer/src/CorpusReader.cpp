@@ -4,7 +4,7 @@
 #include <string>
 #include <string_view>
 
-namespace tokenizer::bpe {
+namespace domlm::tokenizer {
 
 std::string_view DefaultFileName(CorpusSplit split) noexcept {
     switch (split) {
@@ -40,4 +40,4 @@ bool CorpusReader::isOpen() const {
     return in_.is_open();
 }
 
-}  // namespace tokenizer::bpe
+}  // namespace domlm::tokenizer

@@ -15,7 +15,7 @@
 #include <string>
 #include <string_view>
 
-namespace tokenizer::bpe {
+namespace domlm::tokenizer {
 
 /// Role of a corpus file. Training must only consume Train readers;
 ///
@@ -53,4 +53,4 @@ private:
     std::size_t lines_read_{0};
 };
 
-}  // namespace tokenizer::bpe
+}  // namespace domlm::tokenizer

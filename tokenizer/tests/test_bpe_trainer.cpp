@@ -10,8 +10,8 @@
 #include "tokenizer/bpe/Vocabulary.hpp"
 #include "tokenizer/pre/PreTokenizerPipeline.hpp"
 
-using namespace tokenizer::bpe;
-using tokenizer::pre::PreTokenizerPipeline;
+using namespace domlm::tokenizer;
+using domlm::tokenizer::PreTokenizerPipeline;
 
 // Test 1: base 256 byte vocabulary setup.
 TEST(BpeTrainerTest, BaseByteVocabulary) {

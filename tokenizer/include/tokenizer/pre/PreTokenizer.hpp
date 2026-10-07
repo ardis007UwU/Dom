@@ -8,7 +8,7 @@
 
 struct pcre2_code;
 
-namespace tokenizer::pre {
+namespace domlm::tokenizer {
 
 /**
  * Result of pre-tokenization containing storage and chunk views.
@@ -64,4 +64,4 @@ private:
     std::unique_ptr<Impl> impl_;
 };
 
-} // namespace tokenizer::pre
+} // namespace domlm::tokenizer

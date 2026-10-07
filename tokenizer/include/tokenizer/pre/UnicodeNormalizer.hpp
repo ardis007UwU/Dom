@@ -5,7 +5,7 @@
 #include <cstddef>
 #include <memory>
 
-namespace tokenizer::pre {
+namespace domlm::tokenizer {
 
 /**
  * Unicode normalization modes supported by ICU.
@@ -60,4 +60,4 @@ private:
     std::unique_ptr<Impl> impl_;
 };
 
-} // namespace tokenizer::pre
+} // namespace domlm::tokenizer

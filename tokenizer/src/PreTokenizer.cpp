@@ -11,7 +11,7 @@
 #include <string_view>
 #include <vector>
 
-namespace tokenizer::pre {
+namespace domlm::tokenizer {
 
 namespace {
 
@@ -147,4 +147,4 @@ SplitResult PreTokenizer::split(std::string_view input) const {
     return result;
 }
 
-}  // namespace tokenizer::pre
+}  // namespace domlm::tokenizer

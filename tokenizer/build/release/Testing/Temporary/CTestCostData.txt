@@ -1,3 +1,5 @@
-pretokenizer_tests 4 0.00104679
-bpe_trainer_tests 2 0.00184415
+pretokenizer_tests 14 0.000232265
+bpe_trainer_tests 12 0.000261635
+bpe_tokenizer_tests 10 0.000595053
+bpe_v2_tests 7 0.00895097
 ---

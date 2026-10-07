@@ -1,6 +1,6 @@
 #include "tokenizer/pre/PreTokenizerPipeline.hpp"
 
-namespace tokenizer::pre {
+namespace domlm::tokenizer {
 
 PreTokenizerPipeline::PreTokenizerPipeline() = default;
 
@@ -31,4 +31,4 @@ SplitResult PreTokenizerPipeline::split(std::string_view input) const {
     return process(input);
 }
 
-} // namespace tokenizer::pre
+} // namespace domlm::tokenizer

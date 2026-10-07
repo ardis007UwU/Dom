@@ -10,7 +10,7 @@
 #include <utility>
 #include <vector>
 
-namespace tokenizer::bpe {
+namespace domlm::tokenizer {
 
 namespace {
 
@@ -40,7 +40,7 @@ std::size_t BpeTrainer::VecHash::operator()(const std::vector<int>& v) const noe
 }
 
 BpeTrainer::BpeTrainer(std::size_t target_vocab_size,
-                       tokenizer::pre::PreTokenizerPipeline pipeline)
+                       domlm::tokenizer::PreTokenizerPipeline pipeline)
     : target_(target_vocab_size), pipeline_(std::move(pipeline)) {
     if (target_ < Vocabulary::kBaseSize) {
         throw std::invalid_argument("BpeTrainer: target vocab size must be >= 256");
@@ -79,7 +79,7 @@ void BpeTrainer::ingestLine(const std::string& line, FreqMap& freq) {
     // One SplitResult per line; each chunk becomes an independent sequence.
     // Chunks are sanitized valid UTF-8, but BPE operates on raw bytes, so a
     // multi-byte code point contributes one id per byte (0..255 identity).
-    const tokenizer::pre::SplitResult result = pipeline_.split(line);
+    const domlm::tokenizer::SplitResult result = pipeline_.split(line);
     for (const std::string_view chunk : result.chunks) {
         if (chunk.empty()) {
             continue;
@@ -171,4 +171,4 @@ void BpeTrainer::runMerges(FreqMap& freq) {
     }
 }
 
-}  // namespace tokenizer::bpe
+}  // namespace domlm::tokenizer

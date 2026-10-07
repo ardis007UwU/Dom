@@ -19,7 +19,7 @@
 #include <utility>
 #include <vector>
 
-namespace tokenizer::bpe {
+namespace domlm::tokenizer {
 
 /// One learned merge rule, in training order. `id` is the new token id
 /// assigned to bytes(id_a) + bytes(id_b).
@@ -82,4 +82,4 @@ private:
     static std::string BaseDisplay(unsigned char byte);
 };
 
-}  // namespace tokenizer::bpe
+}  // namespace domlm::tokenizer

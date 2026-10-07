@@ -13,22 +13,25 @@
 //   order (line i <=> new id 256+i).
 
 #include <cstddef>
-#include <cstdio>
-#include <fstream>
 #include <iostream>
 #include <string>
 #include <string_view>
 
+#include "domlm/Version.hpp"
 #include "tokenizer/bpe/BpeTrainer.hpp"
 #include "tokenizer/bpe/CorpusReader.hpp"
+#include "tokenizer/bpe/Serialization.hpp"
 #include "tokenizer/bpe/Vocabulary.hpp"
 
 namespace {
 
-using tokenizer::bpe::BpeTrainer;
-using tokenizer::bpe::CorpusReader;
-using tokenizer::bpe::CorpusSplit;
-using tokenizer::bpe::Vocabulary;
+using domlm::tokenizer::BpeTrainer;
+using domlm::tokenizer::CorpusReader;
+using domlm::tokenizer::CorpusSplit;
+using domlm::tokenizer::SaveMerges;
+using domlm::tokenizer::SaveVocabBin;
+using domlm::tokenizer::SaveVocabJson;
+using domlm::tokenizer::Vocabulary;
 
 void PrintUsage(std::string_view prog) {
     std::cout << "Usage:\n"
@@ -36,79 +39,8 @@ void PrintUsage(std::string_view prog) {
               << "--output-vocab vocab.json --output-merges merges.txt\n"
               << "  " << prog << " --input train.txt [--vocab-size N] "
               << "[--output-vocab vocab.json] [--output-merges merges.txt] "
-              << "[--ruleset cl100k_base|o200k_base]\n";
-}
-
-// JSON-escape one token's raw bytes to pure-ASCII text.
-std::string EscapeJsonBytes(std::string_view bytes) {
-    static constexpr char kHex[] = "0123456789abcdef";
-    std::string out;
-    out.reserve(bytes.size() + 2);
-    for (unsigned char c : bytes) {
-        switch (c) {
-            case '"':
-                out += "\\\"";
-                break;
-            case '\\':
-                out += "\\\\";
-                break;
-            case '\b':
-                out += "\\b";
-                break;
-            case '\f':
-                out += "\\f";
-                break;
-            case '\n':
-                out += "\\n";
-                break;
-            case '\r':
-                out += "\\r";
-                break;
-            case '\t':
-                out += "\\t";
-                break;
-            default:
-                if (c >= 0x20 && c <= 0x7E) {
-                    out.push_back(static_cast<char>(c));
-                } else {
-                    out += "\\u00";
-                    out.push_back(kHex[(c >> 4) & 0xF]);
-                    out.push_back(kHex[c & 0xF]);
-                }
-                break;
-        }
-    }
-    return out;
-}
-
-bool WriteVocabJson(const std::string& path, const Vocabulary& vocab) {
-    std::ofstream out(path, std::ios::out | std::ios::binary | std::ios::trunc);
-    if (!out.is_open()) {
-        return false;
-    }
-    out << "{\"version\":1,\"vocab_size\":" << vocab.size() << ",\"tokens\":[";
-    for (std::size_t id = 0; id < vocab.size(); ++id) {
-        if (id != 0) {
-            out << ',';
-        }
-        out << "{\"id\":" << id << ",\"text\":\""
-            << EscapeJsonBytes(vocab.bytesOf(static_cast<int>(id))) << "\"}";
-    }
-    out << "]}";
-    out.flush();
-    return static_cast<bool>(out);
-}
-
-bool WriteMerges(const std::string& path, const Vocabulary& vocab) {
-    std::ofstream out(path, std::ios::out | std::ios::binary | std::ios::trunc);
-    if (!out.is_open()) {
-        return false;
-    }
-    for (const auto& m : vocab.merges()) {
-        out << m.id_a << ' ' << m.id_b << " -> " << m.new_id << '\n';
-    }
-    out.flush();
-    return static_cast<bool>(out);
+              << "[--ruleset cl100k_base|o200k_base] [--output-bin vocab.bin]\n"
+              << "  " << prog << " --version\n";
 }
 
 }  // namespace
@@ -118,6 +50,7 @@ int main(int argc, char* argv[]) {
     std::size_t vocabSize = BpeTrainer::kDefaultVocabSize;
     std::string outputVocab = "vocab.json";
     std::string outputMerges = "merges.txt";
+    std::string outputBin;
     std::string ruleset = "cl100k_base";
 
     for (int i = 1; i < argc; ++i) {
@@ -134,6 +67,10 @@ int main(int argc, char* argv[]) {
             PrintUsage(argv[0]);
             return 0;
         }
+        if (a == "-v" || a == "--version") {
+            std::cout << "DomLM v" << DOMLM_VERSION_STRING << "\n";
+            return 0;
+        }
         if (a == "--input") {
             input.assign(needValue(a));
         } else if (a == "--vocab-size") {
@@ -148,6 +85,8 @@ int main(int argc, char* argv[]) {
             outputVocab.assign(needValue(a));
         } else if (a == "--output-merges") {
             outputMerges.assign(needValue(a));
+        } else if (a == "--output-bin") {
+            outputBin.assign(needValue(a));
         } else if (a == "--ruleset") {
             ruleset.assign(needValue(a));
         } else {
@@ -180,12 +119,14 @@ int main(int argc, char* argv[]) {
         trainer.train(reader);
 
         const Vocabulary& vocab = trainer.vocabulary();
-        if (!WriteVocabJson(outputVocab, vocab)) {
-            std::cerr << "train_bpe: cannot write '" << outputVocab << "'\n";
-            return 1;
-        }
-        if (!WriteMerges(outputMerges, vocab)) {
-            std::cerr << "train_bpe: cannot write '" << outputMerges << "'\n";
+        try {
+            SaveVocabJson(vocab, outputVocab);
+            SaveMerges(vocab, outputMerges);
+            if (!outputBin.empty()) {
+                SaveVocabBin(vocab, outputBin);
+            }
+        } catch (const std::exception& e) {
+            std::cerr << "train_bpe: cannot write outputs: " << e.what() << "\n";
             return 1;
         }
         std::cout << "trained vocab_size=" << vocab.size() << " merges=" << vocab.merges().size()

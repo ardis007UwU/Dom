@@ -24,7 +24,7 @@
 #include <string>
 #include <string_view>
 
-namespace tokenizer::pre::detail {
+namespace domlm::tokenizer::detail {
 
 inline std::string SanitizeUtf8(std::string_view in) {
     static constexpr char kReplacement[] = "\xEF\xBF\xBD";  // U+FFFD
@@ -126,4 +126,4 @@ inline std::size_t Utf8CharLen(unsigned char c) noexcept {
     return 4;  // F0..F4 for sanitized text
 }
 
-}  // namespace tokenizer::pre::detail
+}  // namespace domlm::tokenizer::detail

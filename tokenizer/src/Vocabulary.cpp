@@ -6,7 +6,7 @@
 #include <string_view>
 #include <utility>
 
-namespace tokenizer::bpe {
+namespace domlm::tokenizer {
 
 Vocabulary::Vocabulary() {
     id_to_token_.reserve(kBaseSize);
@@ -92,4 +92,4 @@ std::string Vocabulary::BaseDisplay(unsigned char byte) {
     return out;
 }
 
-}  // namespace tokenizer::bpe
+}  // namespace domlm::tokenizer

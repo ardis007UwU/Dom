@@ -12,7 +12,7 @@
 #include <string_view>
 #include <vector>
 
-namespace tokenizer::pre {
+namespace domlm::tokenizer {
 
 class UnicodeNormalizer::Impl {
 public:
@@ -147,4 +147,4 @@ std::string UnicodeNormalizer::normalize(std::string_view input) const {
     return out;
 }
 
-}  // namespace tokenizer::pre
+}  // namespace domlm::tokenizer

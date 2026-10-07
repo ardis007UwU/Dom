@@ -11,7 +11,7 @@
 # =============================================================================
 
 # =============================================================================
-# Project: tokenizer_pretokenizer
+# Project: DomLM
 # Configurations: Release
 # =============================================================================
 
@@ -95,43 +95,43 @@ build libtokenizer_pre.a: CXX_STATIC_LIBRARY_LINKER__tokenizer_pre_Release CMake
   TARGET_SUPPORT_DIR = CMakeFiles/tokenizer_pre.dir
 
 # =============================================================================
-# Object build statements for EXECUTABLE target tokenize
+# Object build statements for EXECUTABLE target domlm_tokenize
 
 
 #############################################
-# Order-only phony target for tokenize
+# Order-only phony target for domlm_tokenize
 
-build cmake_object_order_depends_target_tokenize: phony || cmake_object_order_depends_target_tokenizer_pre
+build cmake_object_order_depends_target_domlm_tokenize: phony || cmake_object_order_depends_target_tokenizer_pre
 
-build CMakeFiles/tokenize.dir/src/main.cpp.o: CXX_COMPILER__tokenize_unscanned_Release /home/ardis/Desktop/Dom/tokenizer/src/main.cpp || cmake_object_order_depends_target_tokenize
+build CMakeFiles/domlm_tokenize.dir/src/main.cpp.o: CXX_COMPILER__domlm_tokenize_unscanned_Release /home/ardis/Desktop/Dom/tokenizer/src/main.cpp || cmake_object_order_depends_target_domlm_tokenize
   CONFIG = Release
-  DEP_FILE = CMakeFiles/tokenize.dir/src/main.cpp.o.d
+  DEP_FILE = CMakeFiles/domlm_tokenize.dir/src/main.cpp.o.d
   FLAGS = -O3 -DNDEBUG -std=c++20 -Wall -Wextra -Wpedantic -Werror
   INCLUDES = -I/home/ardis/Desktop/Dom/tokenizer/include
-  OBJECT_DIR = CMakeFiles/tokenize.dir
-  OBJECT_FILE_DIR = CMakeFiles/tokenize.dir/src
-  TARGET_SUPPORT_DIR = CMakeFiles/tokenize.dir
+  OBJECT_DIR = CMakeFiles/domlm_tokenize.dir
+  OBJECT_FILE_DIR = CMakeFiles/domlm_tokenize.dir/src
+  TARGET_SUPPORT_DIR = CMakeFiles/domlm_tokenize.dir
 
 
 # =============================================================================
-# Link build statements for EXECUTABLE target tokenize
+# Link build statements for EXECUTABLE target domlm_tokenize
 
 
 #############################################
-# Link the executable tokenize
+# Link the executable domlm_tokenize
 
-build tokenize: CXX_EXECUTABLE_LINKER__tokenize_Release CMakeFiles/tokenize.dir/src/main.cpp.o | libtokenizer_pre.a /usr/lib/libicuuc.so || libtokenizer_pre.a
+build domlm_tokenize: CXX_EXECUTABLE_LINKER__domlm_tokenize_Release CMakeFiles/domlm_tokenize.dir/src/main.cpp.o | libtokenizer_pre.a /usr/lib/libicuuc.so || libtokenizer_pre.a
   CONFIG = Release
-  DEP_FILE = CMakeFiles/tokenize.dir/link.d
+  DEP_FILE = CMakeFiles/domlm_tokenize.dir/link.d
   FLAGS = -O3 -DNDEBUG
-  LINK_FLAGS = -Wl,--dependency-file=CMakeFiles/tokenize.dir/link.d
+  LINK_FLAGS = -Wl,--dependency-file=CMakeFiles/domlm_tokenize.dir/link.d
   LINK_LIBRARIES = libtokenizer_pre.a  /usr/lib/libicuuc.so  -ldl  -lpcre2-8
-  OBJECT_DIR = CMakeFiles/tokenize.dir
+  OBJECT_DIR = CMakeFiles/domlm_tokenize.dir
   POST_BUILD = :
   PRE_LINK = :
-  TARGET_FILE = tokenize
-  TARGET_PDB = tokenize.dbg
-  TARGET_SUPPORT_DIR = CMakeFiles/tokenize.dir
+  TARGET_FILE = domlm_tokenize
+  TARGET_PDB = domlm_tokenize.dbg
+  TARGET_SUPPORT_DIR = CMakeFiles/domlm_tokenize.dir
 
 # =============================================================================
 # Object build statements for STATIC_LIBRARY target tokenizer_bpe
@@ -169,6 +169,33 @@ build CMakeFiles/tokenizer_bpe.dir/src/BpeTrainer.cpp.o: CXX_COMPILER__tokenizer
   OBJECT_FILE_DIR = CMakeFiles/tokenizer_bpe.dir/src
   TARGET_SUPPORT_DIR = CMakeFiles/tokenizer_bpe.dir
 
+build CMakeFiles/tokenizer_bpe.dir/src/Serialization.cpp.o: CXX_COMPILER__tokenizer_bpe_unscanned_Release /home/ardis/Desktop/Dom/tokenizer/src/Serialization.cpp || cmake_object_order_depends_target_tokenizer_bpe
+  CONFIG = Release
+  DEP_FILE = CMakeFiles/tokenizer_bpe.dir/src/Serialization.cpp.o.d
+  FLAGS = -O3 -DNDEBUG -std=c++20 -Wall -Wextra -Wpedantic -Werror
+  INCLUDES = -I/home/ardis/Desktop/Dom/tokenizer/include
+  OBJECT_DIR = CMakeFiles/tokenizer_bpe.dir
+  OBJECT_FILE_DIR = CMakeFiles/tokenizer_bpe.dir/src
+  TARGET_SUPPORT_DIR = CMakeFiles/tokenizer_bpe.dir
+
+build CMakeFiles/tokenizer_bpe.dir/src/Tokenizer.cpp.o: CXX_COMPILER__tokenizer_bpe_unscanned_Release /home/ardis/Desktop/Dom/tokenizer/src/Tokenizer.cpp || cmake_object_order_depends_target_tokenizer_bpe
+  CONFIG = Release
+  DEP_FILE = CMakeFiles/tokenizer_bpe.dir/src/Tokenizer.cpp.o.d
+  FLAGS = -O3 -DNDEBUG -std=c++20 -Wall -Wextra -Wpedantic -Werror
+  INCLUDES = -I/home/ardis/Desktop/Dom/tokenizer/include
+  OBJECT_DIR = CMakeFiles/tokenizer_bpe.dir
+  OBJECT_FILE_DIR = CMakeFiles/tokenizer_bpe.dir/src
+  TARGET_SUPPORT_DIR = CMakeFiles/tokenizer_bpe.dir
+
+build CMakeFiles/tokenizer_bpe.dir/src/BpeEngineV2.cpp.o: CXX_COMPILER__tokenizer_bpe_unscanned_Release /home/ardis/Desktop/Dom/tokenizer/src/BpeEngineV2.cpp || cmake_object_order_depends_target_tokenizer_bpe
+  CONFIG = Release
+  DEP_FILE = CMakeFiles/tokenizer_bpe.dir/src/BpeEngineV2.cpp.o.d
+  FLAGS = -O3 -DNDEBUG -std=c++20 -Wall -Wextra -Wpedantic -Werror
+  INCLUDES = -I/home/ardis/Desktop/Dom/tokenizer/include
+  OBJECT_DIR = CMakeFiles/tokenizer_bpe.dir
+  OBJECT_FILE_DIR = CMakeFiles/tokenizer_bpe.dir/src
+  TARGET_SUPPORT_DIR = CMakeFiles/tokenizer_bpe.dir
+
 
 # =============================================================================
 # Link build statements for STATIC_LIBRARY target tokenizer_bpe
@@ -177,7 +204,7 @@ build CMakeFiles/tokenizer_bpe.dir/src/BpeTrainer.cpp.o: CXX_COMPILER__tokenizer
 #############################################
 # Link the static library libtokenizer_bpe.a
 
-build libtokenizer_bpe.a: CXX_STATIC_LIBRARY_LINKER__tokenizer_bpe_Release CMakeFiles/tokenizer_bpe.dir/src/Vocabulary.cpp.o CMakeFiles/tokenizer_bpe.dir/src/CorpusReader.cpp.o CMakeFiles/tokenizer_bpe.dir/src/BpeTrainer.cpp.o || libtokenizer_pre.a
+build libtokenizer_bpe.a: CXX_STATIC_LIBRARY_LINKER__tokenizer_bpe_Release CMakeFiles/tokenizer_bpe.dir/src/Vocabulary.cpp.o CMakeFiles/tokenizer_bpe.dir/src/CorpusReader.cpp.o CMakeFiles/tokenizer_bpe.dir/src/BpeTrainer.cpp.o CMakeFiles/tokenizer_bpe.dir/src/Serialization.cpp.o CMakeFiles/tokenizer_bpe.dir/src/Tokenizer.cpp.o CMakeFiles/tokenizer_bpe.dir/src/BpeEngineV2.cpp.o || libtokenizer_pre.a
   CONFIG = Release
   LANGUAGE_COMPILE_FLAGS = -O3 -DNDEBUG
   OBJECT_DIR = CMakeFiles/tokenizer_bpe.dir
@@ -188,43 +215,121 @@ build libtokenizer_bpe.a: CXX_STATIC_LIBRARY_LINKER__tokenizer_bpe_Release CMake
   TARGET_SUPPORT_DIR = CMakeFiles/tokenizer_bpe.dir
 
 # =============================================================================
-# Object build statements for EXECUTABLE target train_bpe
+# Object build statements for EXECUTABLE target domlm_train_bpe
 
 
 #############################################
-# Order-only phony target for train_bpe
+# Order-only phony target for domlm_train_bpe
 
-build cmake_object_order_depends_target_train_bpe: phony || cmake_object_order_depends_target_tokenizer_bpe cmake_object_order_depends_target_tokenizer_pre
+build cmake_object_order_depends_target_domlm_train_bpe: phony || cmake_object_order_depends_target_tokenizer_bpe cmake_object_order_depends_target_tokenizer_pre
 
-build CMakeFiles/train_bpe.dir/src/train_main.cpp.o: CXX_COMPILER__train_bpe_unscanned_Release /home/ardis/Desktop/Dom/tokenizer/src/train_main.cpp || cmake_object_order_depends_target_train_bpe
+build CMakeFiles/domlm_train_bpe.dir/src/train_main.cpp.o: CXX_COMPILER__domlm_train_bpe_unscanned_Release /home/ardis/Desktop/Dom/tokenizer/src/train_main.cpp || cmake_object_order_depends_target_domlm_train_bpe
   CONFIG = Release
-  DEP_FILE = CMakeFiles/train_bpe.dir/src/train_main.cpp.o.d
+  DEP_FILE = CMakeFiles/domlm_train_bpe.dir/src/train_main.cpp.o.d
   FLAGS = -O3 -DNDEBUG -std=c++20 -Wall -Wextra -Wpedantic -Werror
   INCLUDES = -I/home/ardis/Desktop/Dom/tokenizer/include
-  OBJECT_DIR = CMakeFiles/train_bpe.dir
-  OBJECT_FILE_DIR = CMakeFiles/train_bpe.dir/src
-  TARGET_SUPPORT_DIR = CMakeFiles/train_bpe.dir
+  OBJECT_DIR = CMakeFiles/domlm_train_bpe.dir
+  OBJECT_FILE_DIR = CMakeFiles/domlm_train_bpe.dir/src
+  TARGET_SUPPORT_DIR = CMakeFiles/domlm_train_bpe.dir
 
 
 # =============================================================================
-# Link build statements for EXECUTABLE target train_bpe
+# Link build statements for EXECUTABLE target domlm_train_bpe
 
 
 #############################################
-# Link the executable train_bpe
+# Link the executable domlm_train_bpe
 
-build train_bpe: CXX_EXECUTABLE_LINKER__train_bpe_Release CMakeFiles/train_bpe.dir/src/train_main.cpp.o | libtokenizer_bpe.a libtokenizer_pre.a /usr/lib/libicuuc.so || libtokenizer_bpe.a libtokenizer_pre.a
+build domlm_train_bpe: CXX_EXECUTABLE_LINKER__domlm_train_bpe_Release CMakeFiles/domlm_train_bpe.dir/src/train_main.cpp.o | libtokenizer_bpe.a libtokenizer_pre.a /usr/lib/libicuuc.so || libtokenizer_bpe.a libtokenizer_pre.a
   CONFIG = Release
-  DEP_FILE = CMakeFiles/train_bpe.dir/link.d
+  DEP_FILE = CMakeFiles/domlm_train_bpe.dir/link.d
   FLAGS = -O3 -DNDEBUG
-  LINK_FLAGS = -Wl,--dependency-file=CMakeFiles/train_bpe.dir/link.d
+  LINK_FLAGS = -Wl,--dependency-file=CMakeFiles/domlm_train_bpe.dir/link.d
   LINK_LIBRARIES = libtokenizer_bpe.a  libtokenizer_pre.a  /usr/lib/libicuuc.so  -ldl  -lpcre2-8
-  OBJECT_DIR = CMakeFiles/train_bpe.dir
+  OBJECT_DIR = CMakeFiles/domlm_train_bpe.dir
   POST_BUILD = :
   PRE_LINK = :
-  TARGET_FILE = train_bpe
-  TARGET_PDB = train_bpe.dbg
-  TARGET_SUPPORT_DIR = CMakeFiles/train_bpe.dir
+  TARGET_FILE = domlm_train_bpe
+  TARGET_PDB = domlm_train_bpe.dbg
+  TARGET_SUPPORT_DIR = CMakeFiles/domlm_train_bpe.dir
+
+# =============================================================================
+# Object build statements for EXECUTABLE target domlm_bench
+
+
+#############################################
+# Order-only phony target for domlm_bench
+
+build cmake_object_order_depends_target_domlm_bench: phony || cmake_object_order_depends_target_tokenizer_bpe cmake_object_order_depends_target_tokenizer_pre
+
+build CMakeFiles/domlm_bench.dir/src/bench_main.cpp.o: CXX_COMPILER__domlm_bench_unscanned_Release /home/ardis/Desktop/Dom/tokenizer/src/bench_main.cpp || cmake_object_order_depends_target_domlm_bench
+  CONFIG = Release
+  DEP_FILE = CMakeFiles/domlm_bench.dir/src/bench_main.cpp.o.d
+  FLAGS = -O3 -DNDEBUG -std=c++20 -Wall -Wextra -Wpedantic -Werror
+  INCLUDES = -I/home/ardis/Desktop/Dom/tokenizer/include
+  OBJECT_DIR = CMakeFiles/domlm_bench.dir
+  OBJECT_FILE_DIR = CMakeFiles/domlm_bench.dir/src
+  TARGET_SUPPORT_DIR = CMakeFiles/domlm_bench.dir
+
+
+# =============================================================================
+# Link build statements for EXECUTABLE target domlm_bench
+
+
+#############################################
+# Link the executable domlm_bench
+
+build domlm_bench: CXX_EXECUTABLE_LINKER__domlm_bench_Release CMakeFiles/domlm_bench.dir/src/bench_main.cpp.o | libtokenizer_bpe.a libtokenizer_pre.a /usr/lib/libicuuc.so || libtokenizer_bpe.a libtokenizer_pre.a
+  CONFIG = Release
+  DEP_FILE = CMakeFiles/domlm_bench.dir/link.d
+  FLAGS = -O3 -DNDEBUG
+  LINK_FLAGS = -Wl,--dependency-file=CMakeFiles/domlm_bench.dir/link.d
+  LINK_LIBRARIES = libtokenizer_bpe.a  libtokenizer_pre.a  /usr/lib/libicuuc.so  -ldl  -lpcre2-8
+  OBJECT_DIR = CMakeFiles/domlm_bench.dir
+  POST_BUILD = :
+  PRE_LINK = :
+  TARGET_FILE = domlm_bench
+  TARGET_PDB = domlm_bench.dbg
+  TARGET_SUPPORT_DIR = CMakeFiles/domlm_bench.dir
+
+# =============================================================================
+# Object build statements for EXECUTABLE target domlm_leaderboard
+
+
+#############################################
+# Order-only phony target for domlm_leaderboard
+
+build cmake_object_order_depends_target_domlm_leaderboard: phony || cmake_object_order_depends_target_tokenizer_bpe cmake_object_order_depends_target_tokenizer_pre
+
+build CMakeFiles/domlm_leaderboard.dir/src/tokenizer_leaderboard.cpp.o: CXX_COMPILER__domlm_leaderboard_unscanned_Release /home/ardis/Desktop/Dom/tokenizer/src/tokenizer_leaderboard.cpp || cmake_object_order_depends_target_domlm_leaderboard
+  CONFIG = Release
+  DEP_FILE = CMakeFiles/domlm_leaderboard.dir/src/tokenizer_leaderboard.cpp.o.d
+  FLAGS = -O3 -DNDEBUG -std=c++20 -Wall -Wextra -Wpedantic -Werror
+  INCLUDES = -I/home/ardis/Desktop/Dom/tokenizer/include
+  OBJECT_DIR = CMakeFiles/domlm_leaderboard.dir
+  OBJECT_FILE_DIR = CMakeFiles/domlm_leaderboard.dir/src
+  TARGET_SUPPORT_DIR = CMakeFiles/domlm_leaderboard.dir
+
+
+# =============================================================================
+# Link build statements for EXECUTABLE target domlm_leaderboard
+
+
+#############################################
+# Link the executable domlm_leaderboard
+
+build domlm_leaderboard: CXX_EXECUTABLE_LINKER__domlm_leaderboard_Release CMakeFiles/domlm_leaderboard.dir/src/tokenizer_leaderboard.cpp.o | libtokenizer_bpe.a libtokenizer_pre.a /usr/lib/libicuuc.so || libtokenizer_bpe.a libtokenizer_pre.a
+  CONFIG = Release
+  DEP_FILE = CMakeFiles/domlm_leaderboard.dir/link.d
+  FLAGS = -O3 -DNDEBUG
+  LINK_FLAGS = -Wl,--dependency-file=CMakeFiles/domlm_leaderboard.dir/link.d
+  LINK_LIBRARIES = libtokenizer_bpe.a  libtokenizer_pre.a  /usr/lib/libicuuc.so  -ldl  -lpcre2-8
+  OBJECT_DIR = CMakeFiles/domlm_leaderboard.dir
+  POST_BUILD = :
+  PRE_LINK = :
+  TARGET_FILE = domlm_leaderboard
+  TARGET_PDB = domlm_leaderboard.dbg
+  TARGET_SUPPORT_DIR = CMakeFiles/domlm_leaderboard.dir
 
 
 #############################################
@@ -347,6 +452,86 @@ build tests/test_bpe_trainer: CXX_EXECUTABLE_LINKER__test_bpe_trainer_Release te
   TARGET_PDB = test_bpe_trainer.dbg
   TARGET_SUPPORT_DIR = tests/CMakeFiles/test_bpe_trainer.dir
 
+# =============================================================================
+# Object build statements for EXECUTABLE target test_bpe_tokenizer
+
+
+#############################################
+# Order-only phony target for test_bpe_tokenizer
+
+build cmake_object_order_depends_target_test_bpe_tokenizer: phony || cmake_object_order_depends_target_tokenizer_bpe cmake_object_order_depends_target_tokenizer_pre
+
+build tests/CMakeFiles/test_bpe_tokenizer.dir/test_bpe_tokenizer.cpp.o: CXX_COMPILER__test_bpe_tokenizer_unscanned_Release /home/ardis/Desktop/Dom/tokenizer/tests/test_bpe_tokenizer.cpp || cmake_object_order_depends_target_test_bpe_tokenizer
+  CONFIG = Release
+  DEFINES = -DGTEST_LINKED_AS_SHARED_LIBRARY=1
+  DEP_FILE = tests/CMakeFiles/test_bpe_tokenizer.dir/test_bpe_tokenizer.cpp.o.d
+  FLAGS = -O3 -DNDEBUG -std=c++20 -Wall -Wextra -Wpedantic -Werror
+  INCLUDES = -I/home/ardis/Desktop/Dom/tokenizer/include
+  OBJECT_DIR = tests/CMakeFiles/test_bpe_tokenizer.dir
+  OBJECT_FILE_DIR = tests/CMakeFiles/test_bpe_tokenizer.dir
+  TARGET_SUPPORT_DIR = tests/CMakeFiles/test_bpe_tokenizer.dir
+
+
+# =============================================================================
+# Link build statements for EXECUTABLE target test_bpe_tokenizer
+
+
+#############################################
+# Link the executable tests/test_bpe_tokenizer
+
+build tests/test_bpe_tokenizer: CXX_EXECUTABLE_LINKER__test_bpe_tokenizer_Release tests/CMakeFiles/test_bpe_tokenizer.dir/test_bpe_tokenizer.cpp.o | libtokenizer_bpe.a libtokenizer_pre.a /usr/lib/libicuuc.so /usr/lib/libgtest_main.so.1.18.0 /usr/lib/libgtest.so.1.18.0 || libtokenizer_bpe.a libtokenizer_pre.a
+  CONFIG = Release
+  DEP_FILE = tests/CMakeFiles/test_bpe_tokenizer.dir/link.d
+  FLAGS = -O3 -DNDEBUG
+  LINK_FLAGS = -Wl,--dependency-file=tests/CMakeFiles/test_bpe_tokenizer.dir/link.d
+  LINK_LIBRARIES = libtokenizer_bpe.a  libtokenizer_pre.a  /usr/lib/libicuuc.so  -ldl  -lpcre2-8  /usr/lib/libgtest_main.so.1.18.0  /usr/lib/libgtest.so.1.18.0
+  OBJECT_DIR = tests/CMakeFiles/test_bpe_tokenizer.dir
+  POST_BUILD = :
+  PRE_LINK = :
+  TARGET_FILE = tests/test_bpe_tokenizer
+  TARGET_PDB = test_bpe_tokenizer.dbg
+  TARGET_SUPPORT_DIR = tests/CMakeFiles/test_bpe_tokenizer.dir
+
+# =============================================================================
+# Object build statements for EXECUTABLE target test_bpe_v2
+
+
+#############################################
+# Order-only phony target for test_bpe_v2
+
+build cmake_object_order_depends_target_test_bpe_v2: phony || cmake_object_order_depends_target_tokenizer_bpe cmake_object_order_depends_target_tokenizer_pre
+
+build tests/CMakeFiles/test_bpe_v2.dir/test_bpe_v2.cpp.o: CXX_COMPILER__test_bpe_v2_unscanned_Release /home/ardis/Desktop/Dom/tokenizer/tests/test_bpe_v2.cpp || cmake_object_order_depends_target_test_bpe_v2
+  CONFIG = Release
+  DEFINES = -DGTEST_LINKED_AS_SHARED_LIBRARY=1
+  DEP_FILE = tests/CMakeFiles/test_bpe_v2.dir/test_bpe_v2.cpp.o.d
+  FLAGS = -O3 -DNDEBUG -std=c++20 -Wall -Wextra -Wpedantic -Werror
+  INCLUDES = -I/home/ardis/Desktop/Dom/tokenizer/include
+  OBJECT_DIR = tests/CMakeFiles/test_bpe_v2.dir
+  OBJECT_FILE_DIR = tests/CMakeFiles/test_bpe_v2.dir
+  TARGET_SUPPORT_DIR = tests/CMakeFiles/test_bpe_v2.dir
+
+
+# =============================================================================
+# Link build statements for EXECUTABLE target test_bpe_v2
+
+
+#############################################
+# Link the executable tests/test_bpe_v2
+
+build tests/test_bpe_v2: CXX_EXECUTABLE_LINKER__test_bpe_v2_Release tests/CMakeFiles/test_bpe_v2.dir/test_bpe_v2.cpp.o | libtokenizer_bpe.a libtokenizer_pre.a /usr/lib/libicuuc.so /usr/lib/libgtest_main.so.1.18.0 /usr/lib/libgtest.so.1.18.0 || libtokenizer_bpe.a libtokenizer_pre.a
+  CONFIG = Release
+  DEP_FILE = tests/CMakeFiles/test_bpe_v2.dir/link.d
+  FLAGS = -O3 -DNDEBUG
+  LINK_FLAGS = -Wl,--dependency-file=tests/CMakeFiles/test_bpe_v2.dir/link.d
+  LINK_LIBRARIES = libtokenizer_bpe.a  libtokenizer_pre.a  /usr/lib/libicuuc.so  -ldl  -lpcre2-8  /usr/lib/libgtest_main.so.1.18.0  /usr/lib/libgtest.so.1.18.0
+  OBJECT_DIR = tests/CMakeFiles/test_bpe_v2.dir
+  POST_BUILD = :
+  PRE_LINK = :
+  TARGET_FILE = tests/test_bpe_v2
+  TARGET_PDB = test_bpe_v2.dbg
+  TARGET_SUPPORT_DIR = tests/CMakeFiles/test_bpe_v2.dir
+
 
 #############################################
 # Utility command for test
@@ -386,7 +571,11 @@ build tests/rebuild_cache: phony tests/CMakeFiles/rebuild_cache.util
 # =============================================================================
 # Target aliases.
 
+build test_bpe_tokenizer: phony tests/test_bpe_tokenizer
+
 build test_bpe_trainer: phony tests/test_bpe_trainer
+
+build test_bpe_v2: phony tests/test_bpe_v2
 
 build test_pretokenizer: phony tests/test_pretokenizer
 
@@ -402,14 +591,14 @@ build tokenizer_pre: phony libtokenizer_pre.a
 #############################################
 # Folder: /home/ardis/Desktop/Dom/tokenizer/build/release
 
-build all: phony libtokenizer_pre.a tokenize libtokenizer_bpe.a train_bpe tests/all
+build all: phony libtokenizer_pre.a domlm_tokenize libtokenizer_bpe.a domlm_train_bpe domlm_bench domlm_leaderboard tests/all
 
 # =============================================================================
 
 #############################################
 # Folder: /home/ardis/Desktop/Dom/tokenizer/build/release/tests
 
-build tests/all: phony tests/test_pretokenizer tests/test_bpe_trainer
+build tests/all: phony tests/test_pretokenizer tests/test_bpe_trainer tests/test_bpe_tokenizer tests/test_bpe_v2
 
 # =============================================================================
 # Built-in targets
@@ -418,14 +607,14 @@ build tests/all: phony tests/test_pretokenizer tests/test_bpe_trainer
 #############################################
 # Re-run CMake if any of its inputs changed.
 
-build build.ninja /home/ardis/Desktop/Dom/tokenizer/build/release/cmake_install.cmake /home/ardis/Desktop/Dom/tokenizer/build/release/tests/cmake_install.cmake /home/ardis/Desktop/Dom/tokenizer/build/release/CTestTestfile.cmake /home/ardis/Desktop/Dom/tokenizer/build/release/tests/CTestTestfile.cmake: RERUN_CMAKE | /home/ardis/Desktop/Dom/tokenizer/CMakeLists.txt /home/ardis/Desktop/Dom/tokenizer/tests/CMakeLists.txt /usr/lib/cmake/GTest/GTestConfig.cmake /usr/lib/cmake/GTest/GTestConfigVersion.cmake /usr/lib/cmake/GTest/GTestTargets-none.cmake /usr/lib/cmake/GTest/GTestTargets.cmake /usr/share/cmake/Modules/CMakeCXXInformation.cmake /usr/share/cmake/Modules/CMakeCommonLanguageInclude.cmake /usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake /usr/share/cmake/Modules/CMakeGenericSystem.cmake /usr/share/cmake/Modules/CMakeInitializeConfigs.cmake /usr/share/cmake/Modules/CMakeLanguageInformation.cmake /usr/share/cmake/Modules/CMakeSystemSpecificInformation.cmake /usr/share/cmake/Modules/CMakeSystemSpecificInitialize.cmake /usr/share/cmake/Modules/CheckCXXSourceCompiles.cmake /usr/share/cmake/Modules/CheckIncludeFileCXX.cmake /usr/share/cmake/Modules/CheckLibraryExists.cmake /usr/share/cmake/Modules/Compiler/CMakeCommonCompilerMacros.cmake /usr/share/cmake/Modules/Compiler/GNU-CXX.cmake /usr/share/cmake/Modules/Compiler/GNU.cmake /usr/share/cmake/Modules/FindGTest.cmake /usr/share/cmake/Modules/FindICU.cmake /usr/share/cmake/Modules/FindPackageHandleStandardArgs.cmake /usr/share/cmake/Modules/FindPackageMessage.cmake /usr/share/cmake/Modules/FindPkgConfig.cmake /usr/share/cmake/Modules/FindThreads.cmake /usr/share/cmake/Modules/GoogleTest.cmake /usr/share/cmake/Modules/Internal/CMakeCXXLinkerInformation.cmake /usr/share/cmake/Modules/Internal/CMakeCommonLinkerInformation.cmake /usr/share/cmake/Modules/Internal/CheckCommon.cmake /usr/share/cmake/Modules/Internal/CheckSourceCompiles.cmake /usr/share/cmake/Modules/Linker/GNU-CXX.cmake /usr/share/cmake/Modules/Linker/GNU.cmake /usr/share/cmake/Modules/Platform/Linker/GNU.cmake /usr/share/cmake/Modules/Platform/Linker/Linux-GNU-CXX.cmake /usr/share/cmake/Modules/Platform/Linker/Linux-GNU.cmake /usr/share/cmake/Modules/Platform/Linux-GNU-CXX.cmake /usr/share/cmake/Modules/Platform/Linux-GNU.cmake /usr/share/cmake/Modules/Platform/Linux-Initialize.cmake /usr/share/cmake/Modules/Platform/Linux.cmake /usr/share/cmake/Modules/Platform/UnixPaths.cmake /usr/share/cmake/Modules/SelectLibraryConfigurations.cmake CMakeCache.txt CMakeFiles/4.4.4/CMakeCXXCompiler.cmake CMakeFiles/4.4.4/CMakeSystem.cmake
+build build.ninja /home/ardis/Desktop/Dom/tokenizer/build/release/cmake_install.cmake /home/ardis/Desktop/Dom/tokenizer/build/release/tests/cmake_install.cmake /home/ardis/Desktop/Dom/tokenizer/build/release/CTestTestfile.cmake /home/ardis/Desktop/Dom/tokenizer/build/release/tests/CTestTestfile.cmake: RERUN_CMAKE | /home/ardis/Desktop/Dom/tokenizer/CMakeLists.txt /home/ardis/Desktop/Dom/tokenizer/include/domlm/Version.hpp.in /home/ardis/Desktop/Dom/tokenizer/tests/CMakeLists.txt /usr/lib/cmake/GTest/GTestConfig.cmake /usr/lib/cmake/GTest/GTestConfigVersion.cmake /usr/lib/cmake/GTest/GTestTargets-none.cmake /usr/lib/cmake/GTest/GTestTargets.cmake /usr/share/cmake/Modules/CMakeCXXInformation.cmake /usr/share/cmake/Modules/CMakeCommonLanguageInclude.cmake /usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake /usr/share/cmake/Modules/CMakeGenericSystem.cmake /usr/share/cmake/Modules/CMakeInitializeConfigs.cmake /usr/share/cmake/Modules/CMakeLanguageInformation.cmake /usr/share/cmake/Modules/CMakeSystemSpecificInformation.cmake /usr/share/cmake/Modules/CMakeSystemSpecificInitialize.cmake /usr/share/cmake/Modules/CheckCXXSourceCompiles.cmake /usr/share/cmake/Modules/CheckIncludeFileCXX.cmake /usr/share/cmake/Modules/CheckLibraryExists.cmake /usr/share/cmake/Modules/Compiler/CMakeCommonCompilerMacros.cmake /usr/share/cmake/Modules/Compiler/GNU-CXX.cmake /usr/share/cmake/Modules/Compiler/GNU.cmake /usr/share/cmake/Modules/FindGTest.cmake /usr/share/cmake/Modules/FindICU.cmake /usr/share/cmake/Modules/FindPackageHandleStandardArgs.cmake /usr/share/cmake/Modules/FindPackageMessage.cmake /usr/share/cmake/Modules/FindPkgConfig.cmake /usr/share/cmake/Modules/FindThreads.cmake /usr/share/cmake/Modules/GoogleTest.cmake /usr/share/cmake/Modules/Internal/CMakeCXXLinkerInformation.cmake /usr/share/cmake/Modules/Internal/CMakeCommonLinkerInformation.cmake /usr/share/cmake/Modules/Internal/CheckCommon.cmake /usr/share/cmake/Modules/Internal/CheckSourceCompiles.cmake /usr/share/cmake/Modules/Linker/GNU-CXX.cmake /usr/share/cmake/Modules/Linker/GNU.cmake /usr/share/cmake/Modules/Platform/Linker/GNU.cmake /usr/share/cmake/Modules/Platform/Linker/Linux-GNU-CXX.cmake /usr/share/cmake/Modules/Platform/Linker/Linux-GNU.cmake /usr/share/cmake/Modules/Platform/Linux-GNU-CXX.cmake /usr/share/cmake/Modules/Platform/Linux-GNU.cmake /usr/share/cmake/Modules/Platform/Linux-Initialize.cmake /usr/share/cmake/Modules/Platform/Linux.cmake /usr/share/cmake/Modules/Platform/UnixPaths.cmake /usr/share/cmake/Modules/SelectLibraryConfigurations.cmake CMakeCache.txt CMakeFiles/4.4.4/CMakeCXXCompiler.cmake CMakeFiles/4.4.4/CMakeSystem.cmake
   pool = console
 
 
 #############################################
 # A missing CMake input file is not an error.
 
-build /home/ardis/Desktop/Dom/tokenizer/CMakeLists.txt /home/ardis/Desktop/Dom/tokenizer/tests/CMakeLists.txt /usr/lib/cmake/GTest/GTestConfig.cmake /usr/lib/cmake/GTest/GTestConfigVersion.cmake /usr/lib/cmake/GTest/GTestTargets-none.cmake /usr/lib/cmake/GTest/GTestTargets.cmake /usr/share/cmake/Modules/CMakeCXXInformation.cmake /usr/share/cmake/Modules/CMakeCommonLanguageInclude.cmake /usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake /usr/share/cmake/Modules/CMakeGenericSystem.cmake /usr/share/cmake/Modules/CMakeInitializeConfigs.cmake /usr/share/cmake/Modules/CMakeLanguageInformation.cmake /usr/share/cmake/Modules/CMakeSystemSpecificInformation.cmake /usr/share/cmake/Modules/CMakeSystemSpecificInitialize.cmake /usr/share/cmake/Modules/CheckCXXSourceCompiles.cmake /usr/share/cmake/Modules/CheckIncludeFileCXX.cmake /usr/share/cmake/Modules/CheckLibraryExists.cmake /usr/share/cmake/Modules/Compiler/CMakeCommonCompilerMacros.cmake /usr/share/cmake/Modules/Compiler/GNU-CXX.cmake /usr/share/cmake/Modules/Compiler/GNU.cmake /usr/share/cmake/Modules/FindGTest.cmake /usr/share/cmake/Modules/FindICU.cmake /usr/share/cmake/Modules/FindPackageHandleStandardArgs.cmake /usr/share/cmake/Modules/FindPackageMessage.cmake /usr/share/cmake/Modules/FindPkgConfig.cmake /usr/share/cmake/Modules/FindThreads.cmake /usr/share/cmake/Modules/GoogleTest.cmake /usr/share/cmake/Modules/Internal/CMakeCXXLinkerInformation.cmake /usr/share/cmake/Modules/Internal/CMakeCommonLinkerInformation.cmake /usr/share/cmake/Modules/Internal/CheckCommon.cmake /usr/share/cmake/Modules/Internal/CheckSourceCompiles.cmake /usr/share/cmake/Modules/Linker/GNU-CXX.cmake /usr/share/cmake/Modules/Linker/GNU.cmake /usr/share/cmake/Modules/Platform/Linker/GNU.cmake /usr/share/cmake/Modules/Platform/Linker/Linux-GNU-CXX.cmake /usr/share/cmake/Modules/Platform/Linker/Linux-GNU.cmake /usr/share/cmake/Modules/Platform/Linux-GNU-CXX.cmake /usr/share/cmake/Modules/Platform/Linux-GNU.cmake /usr/share/cmake/Modules/Platform/Linux-Initialize.cmake /usr/share/cmake/Modules/Platform/Linux.cmake /usr/share/cmake/Modules/Platform/UnixPaths.cmake /usr/share/cmake/Modules/SelectLibraryConfigurations.cmake CMakeCache.txt CMakeFiles/4.4.4/CMakeCXXCompiler.cmake CMakeFiles/4.4.4/CMakeSystem.cmake: phony
+build /home/ardis/Desktop/Dom/tokenizer/CMakeLists.txt /home/ardis/Desktop/Dom/tokenizer/include/domlm/Version.hpp.in /home/ardis/Desktop/Dom/tokenizer/tests/CMakeLists.txt /usr/lib/cmake/GTest/GTestConfig.cmake /usr/lib/cmake/GTest/GTestConfigVersion.cmake /usr/lib/cmake/GTest/GTestTargets-none.cmake /usr/lib/cmake/GTest/GTestTargets.cmake /usr/share/cmake/Modules/CMakeCXXInformation.cmake /usr/share/cmake/Modules/CMakeCommonLanguageInclude.cmake /usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake /usr/share/cmake/Modules/CMakeGenericSystem.cmake /usr/share/cmake/Modules/CMakeInitializeConfigs.cmake /usr/share/cmake/Modules/CMakeLanguageInformation.cmake /usr/share/cmake/Modules/CMakeSystemSpecificInformation.cmake /usr/share/cmake/Modules/CMakeSystemSpecificInitialize.cmake /usr/share/cmake/Modules/CheckCXXSourceCompiles.cmake /usr/share/cmake/Modules/CheckIncludeFileCXX.cmake /usr/share/cmake/Modules/CheckLibraryExists.cmake /usr/share/cmake/Modules/Compiler/CMakeCommonCompilerMacros.cmake /usr/share/cmake/Modules/Compiler/GNU-CXX.cmake /usr/share/cmake/Modules/Compiler/GNU.cmake /usr/share/cmake/Modules/FindGTest.cmake /usr/share/cmake/Modules/FindICU.cmake /usr/share/cmake/Modules/FindPackageHandleStandardArgs.cmake /usr/share/cmake/Modules/FindPackageMessage.cmake /usr/share/cmake/Modules/FindPkgConfig.cmake /usr/share/cmake/Modules/FindThreads.cmake /usr/share/cmake/Modules/GoogleTest.cmake /usr/share/cmake/Modules/Internal/CMakeCXXLinkerInformation.cmake /usr/share/cmake/Modules/Internal/CMakeCommonLinkerInformation.cmake /usr/share/cmake/Modules/Internal/CheckCommon.cmake /usr/share/cmake/Modules/Internal/CheckSourceCompiles.cmake /usr/share/cmake/Modules/Linker/GNU-CXX.cmake /usr/share/cmake/Modules/Linker/GNU.cmake /usr/share/cmake/Modules/Platform/Linker/GNU.cmake /usr/share/cmake/Modules/Platform/Linker/Linux-GNU-CXX.cmake /usr/share/cmake/Modules/Platform/Linker/Linux-GNU.cmake /usr/share/cmake/Modules/Platform/Linux-GNU-CXX.cmake /usr/share/cmake/Modules/Platform/Linux-GNU.cmake /usr/share/cmake/Modules/Platform/Linux-Initialize.cmake /usr/share/cmake/Modules/Platform/Linux.cmake /usr/share/cmake/Modules/Platform/UnixPaths.cmake /usr/share/cmake/Modules/SelectLibraryConfigurations.cmake CMakeCache.txt CMakeFiles/4.4.4/CMakeCXXCompiler.cmake CMakeFiles/4.4.4/CMakeSystem.cmake: phony
 
 
 #############################################

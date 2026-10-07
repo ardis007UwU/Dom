@@ -8,7 +8,7 @@
 #include <string_view>
 #include <vector>
 
-using namespace tokenizer::pre;
+using namespace domlm::tokenizer;
 
 namespace {
 

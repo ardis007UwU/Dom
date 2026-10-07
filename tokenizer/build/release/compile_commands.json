@@ -19,9 +19,9 @@
 },
 {
   "directory": "/home/ardis/Desktop/Dom/tokenizer/build/release",
-  "command": "/usr/bin/c++ -I/home/ardis/Desktop/Dom/tokenizer/include -O3 -DNDEBUG -std=c++20 -Wall -Wextra -Wpedantic -Werror -o CMakeFiles/tokenize.dir/src/main.cpp.o -c /home/ardis/Desktop/Dom/tokenizer/src/main.cpp",
+  "command": "/usr/bin/c++ -I/home/ardis/Desktop/Dom/tokenizer/include -O3 -DNDEBUG -std=c++20 -Wall -Wextra -Wpedantic -Werror -o CMakeFiles/domlm_tokenize.dir/src/main.cpp.o -c /home/ardis/Desktop/Dom/tokenizer/src/main.cpp",
   "file": "/home/ardis/Desktop/Dom/tokenizer/src/main.cpp",
-  "output": "/home/ardis/Desktop/Dom/tokenizer/build/release/CMakeFiles/tokenize.dir/src/main.cpp.o"
+  "output": "/home/ardis/Desktop/Dom/tokenizer/build/release/CMakeFiles/domlm_tokenize.dir/src/main.cpp.o"
 },
 {
   "directory": "/home/ardis/Desktop/Dom/tokenizer/build/release",
@@ -43,9 +43,39 @@
 },
 {
   "directory": "/home/ardis/Desktop/Dom/tokenizer/build/release",
-  "command": "/usr/bin/c++ -I/home/ardis/Desktop/Dom/tokenizer/include -O3 -DNDEBUG -std=c++20 -Wall -Wextra -Wpedantic -Werror -o CMakeFiles/train_bpe.dir/src/train_main.cpp.o -c /home/ardis/Desktop/Dom/tokenizer/src/train_main.cpp",
+  "command": "/usr/bin/c++ -I/home/ardis/Desktop/Dom/tokenizer/include -O3 -DNDEBUG -std=c++20 -Wall -Wextra -Wpedantic -Werror -o CMakeFiles/tokenizer_bpe.dir/src/Serialization.cpp.o -c /home/ardis/Desktop/Dom/tokenizer/src/Serialization.cpp",
+  "file": "/home/ardis/Desktop/Dom/tokenizer/src/Serialization.cpp",
+  "output": "/home/ardis/Desktop/Dom/tokenizer/build/release/CMakeFiles/tokenizer_bpe.dir/src/Serialization.cpp.o"
+},
+{
+  "directory": "/home/ardis/Desktop/Dom/tokenizer/build/release",
+  "command": "/usr/bin/c++ -I/home/ardis/Desktop/Dom/tokenizer/include -O3 -DNDEBUG -std=c++20 -Wall -Wextra -Wpedantic -Werror -o CMakeFiles/tokenizer_bpe.dir/src/Tokenizer.cpp.o -c /home/ardis/Desktop/Dom/tokenizer/src/Tokenizer.cpp",
+  "file": "/home/ardis/Desktop/Dom/tokenizer/src/Tokenizer.cpp",
+  "output": "/home/ardis/Desktop/Dom/tokenizer/build/release/CMakeFiles/tokenizer_bpe.dir/src/Tokenizer.cpp.o"
+},
+{
+  "directory": "/home/ardis/Desktop/Dom/tokenizer/build/release",
+  "command": "/usr/bin/c++ -I/home/ardis/Desktop/Dom/tokenizer/include -O3 -DNDEBUG -std=c++20 -Wall -Wextra -Wpedantic -Werror -o CMakeFiles/tokenizer_bpe.dir/src/BpeEngineV2.cpp.o -c /home/ardis/Desktop/Dom/tokenizer/src/BpeEngineV2.cpp",
+  "file": "/home/ardis/Desktop/Dom/tokenizer/src/BpeEngineV2.cpp",
+  "output": "/home/ardis/Desktop/Dom/tokenizer/build/release/CMakeFiles/tokenizer_bpe.dir/src/BpeEngineV2.cpp.o"
+},
+{
+  "directory": "/home/ardis/Desktop/Dom/tokenizer/build/release",
+  "command": "/usr/bin/c++ -I/home/ardis/Desktop/Dom/tokenizer/include -O3 -DNDEBUG -std=c++20 -Wall -Wextra -Wpedantic -Werror -o CMakeFiles/domlm_train_bpe.dir/src/train_main.cpp.o -c /home/ardis/Desktop/Dom/tokenizer/src/train_main.cpp",
   "file": "/home/ardis/Desktop/Dom/tokenizer/src/train_main.cpp",
-  "output": "/home/ardis/Desktop/Dom/tokenizer/build/release/CMakeFiles/train_bpe.dir/src/train_main.cpp.o"
+  "output": "/home/ardis/Desktop/Dom/tokenizer/build/release/CMakeFiles/domlm_train_bpe.dir/src/train_main.cpp.o"
+},
+{
+  "directory": "/home/ardis/Desktop/Dom/tokenizer/build/release",
+  "command": "/usr/bin/c++ -I/home/ardis/Desktop/Dom/tokenizer/include -O3 -DNDEBUG -std=c++20 -Wall -Wextra -Wpedantic -Werror -o CMakeFiles/domlm_bench.dir/src/bench_main.cpp.o -c /home/ardis/Desktop/Dom/tokenizer/src/bench_main.cpp",
+  "file": "/home/ardis/Desktop/Dom/tokenizer/src/bench_main.cpp",
+  "output": "/home/ardis/Desktop/Dom/tokenizer/build/release/CMakeFiles/domlm_bench.dir/src/bench_main.cpp.o"
+},
+{
+  "directory": "/home/ardis/Desktop/Dom/tokenizer/build/release",
+  "command": "/usr/bin/c++ -I/home/ardis/Desktop/Dom/tokenizer/include -O3 -DNDEBUG -std=c++20 -Wall -Wextra -Wpedantic -Werror -o CMakeFiles/domlm_leaderboard.dir/src/tokenizer_leaderboard.cpp.o -c /home/ardis/Desktop/Dom/tokenizer/src/tokenizer_leaderboard.cpp",
+  "file": "/home/ardis/Desktop/Dom/tokenizer/src/tokenizer_leaderboard.cpp",
+  "output": "/home/ardis/Desktop/Dom/tokenizer/build/release/CMakeFiles/domlm_leaderboard.dir/src/tokenizer_leaderboard.cpp.o"
 },
 {
   "directory": "/home/ardis/Desktop/Dom/tokenizer/build/release",
@@ -58,5 +88,17 @@
   "command": "/usr/bin/c++ -DGTEST_LINKED_AS_SHARED_LIBRARY=1 -I/home/ardis/Desktop/Dom/tokenizer/include -O3 -DNDEBUG -std=c++20 -Wall -Wextra -Wpedantic -Werror -o tests/CMakeFiles/test_bpe_trainer.dir/test_bpe_trainer.cpp.o -c /home/ardis/Desktop/Dom/tokenizer/tests/test_bpe_trainer.cpp",
   "file": "/home/ardis/Desktop/Dom/tokenizer/tests/test_bpe_trainer.cpp",
   "output": "/home/ardis/Desktop/Dom/tokenizer/build/release/tests/CMakeFiles/test_bpe_trainer.dir/test_bpe_trainer.cpp.o"
+},
+{
+  "directory": "/home/ardis/Desktop/Dom/tokenizer/build/release",
+  "command": "/usr/bin/c++ -DGTEST_LINKED_AS_SHARED_LIBRARY=1 -I/home/ardis/Desktop/Dom/tokenizer/include -O3 -DNDEBUG -std=c++20 -Wall -Wextra -Wpedantic -Werror -o tests/CMakeFiles/test_bpe_tokenizer.dir/test_bpe_tokenizer.cpp.o -c /home/ardis/Desktop/Dom/tokenizer/tests/test_bpe_tokenizer.cpp",
+  "file": "/home/ardis/Desktop/Dom/tokenizer/tests/test_bpe_tokenizer.cpp",
+  "output": "/home/ardis/Desktop/Dom/tokenizer/build/release/tests/CMakeFiles/test_bpe_tokenizer.dir/test_bpe_tokenizer.cpp.o"
+},
+{
+  "directory": "/home/ardis/Desktop/Dom/tokenizer/build/release",
+  "command": "/usr/bin/c++ -DGTEST_LINKED_AS_SHARED_LIBRARY=1 -I/home/ardis/Desktop/Dom/tokenizer/include -O3 -DNDEBUG -std=c++20 -Wall -Wextra -Wpedantic -Werror -o tests/CMakeFiles/test_bpe_v2.dir/test_bpe_v2.cpp.o -c /home/ardis/Desktop/Dom/tokenizer/tests/test_bpe_v2.cpp",
+  "file": "/home/ardis/Desktop/Dom/tokenizer/tests/test_bpe_v2.cpp",
+  "output": "/home/ardis/Desktop/Dom/tokenizer/build/release/tests/CMakeFiles/test_bpe_v2.dir/test_bpe_v2.cpp.o"
 }
 ]

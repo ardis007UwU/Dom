@@ -1,10 +1,10 @@
-Start testing: Oct 07 10:43 EEST
+Start testing: Oct 07 16:43 EEST
 ----------------------------------------------------------
-1/2 Testing: pretokenizer_tests
-1/2 Test: pretokenizer_tests
+1/4 Testing: pretokenizer_tests
+1/4 Test: pretokenizer_tests
 Command: "/home/ardis/Desktop/Dom/tokenizer/build/release/tests/test_pretokenizer"
 Directory: /home/ardis/Desktop/Dom/tokenizer/build/release/tests
-"pretokenizer_tests" start time: Oct 07 10:43 EEST
+"pretokenizer_tests" start time: Oct 07 16:43 EEST
 Output:
 ----------------------------------------------------------
 Running main() from /usr/src/debug/gtest/googletest-1.18.0/googletest/src/gtest_main.cc
@@ -48,21 +48,21 @@ Running main() from /usr/src/debug/gtest/googletest-1.18.0/googletest/src/gtest_
 [----------] 17 tests from PreTokenizerTest (0 ms total)
 
 [----------] Global test environment tear-down
-[==========] 17 tests from 1 test suite ran. (1 ms total)
+[==========] 17 tests from 1 test suite ran. (0 ms total)
 [  PASSED  ] 17 tests.
 <end of output>
 Test time =   0.00 sec
 ----------------------------------------------------------
 Test Passed.
-"pretokenizer_tests" end time: Oct 07 10:43 EEST
+"pretokenizer_tests" end time: Oct 07 16:43 EEST
 "pretokenizer_tests" time elapsed: 00:00:00
 ----------------------------------------------------------
 
-2/2 Testing: bpe_trainer_tests
-2/2 Test: bpe_trainer_tests
+2/4 Testing: bpe_trainer_tests
+2/4 Test: bpe_trainer_tests
 Command: "/home/ardis/Desktop/Dom/tokenizer/build/release/tests/test_bpe_trainer"
 Directory: /home/ardis/Desktop/Dom/tokenizer/build/release/tests
-"bpe_trainer_tests" start time: Oct 07 10:43 EEST
+"bpe_trainer_tests" start time: Oct 07 16:43 EEST
 Output:
 ----------------------------------------------------------
 Running main() from /usr/src/debug/gtest/googletest-1.18.0/googletest/src/gtest_main.cc
@@ -88,8 +88,86 @@ Running main() from /usr/src/debug/gtest/googletest-1.18.0/googletest/src/gtest_
 Test time =   0.00 sec
 ----------------------------------------------------------
 Test Passed.
-"bpe_trainer_tests" end time: Oct 07 10:43 EEST
+"bpe_trainer_tests" end time: Oct 07 16:43 EEST
 "bpe_trainer_tests" time elapsed: 00:00:00
 ----------------------------------------------------------
 
-End testing: Oct 07 10:43 EEST
+3/4 Testing: bpe_tokenizer_tests
+3/4 Test: bpe_tokenizer_tests
+Command: "/home/ardis/Desktop/Dom/tokenizer/build/release/tests/test_bpe_tokenizer"
+Directory: /home/ardis/Desktop/Dom/tokenizer/build/release/tests
+"bpe_tokenizer_tests" start time: Oct 07 16:43 EEST
+Output:
+----------------------------------------------------------
+Running main() from /usr/src/debug/gtest/googletest-1.18.0/googletest/src/gtest_main.cc
+[==========] Running 7 tests from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 7 tests from BpeTokenizerTest
+[ RUN      ] BpeTokenizerTest.KnownEncodingsMatchTraining
+[       OK ] BpeTokenizerTest.KnownEncodingsMatchTraining (0 ms)
+[ RUN      ] BpeTokenizerTest.RankOrderNotGreedySubstring
+[       OK ] BpeTokenizerTest.RankOrderNotGreedySubstring (0 ms)
+[ RUN      ] BpeTokenizerTest.MergesNeverCrossChunkBoundaries
+[       OK ] BpeTokenizerTest.MergesNeverCrossChunkBoundaries (0 ms)
+[ RUN      ] BpeTokenizerTest.RoundTripValidText
+[       OK ] BpeTokenizerTest.RoundTripValidText (0 ms)
+[ RUN      ] BpeTokenizerTest.EncodeIntoReusesCallerBuffer
+[       OK ] BpeTokenizerTest.EncodeIntoReusesCallerBuffer (0 ms)
+[ RUN      ] BpeTokenizerTest.DecodeRejectsUnknownIds
+[       OK ] BpeTokenizerTest.DecodeRejectsUnknownIds (0 ms)
+[ RUN      ] BpeTokenizerTest.FileRoundTripPreservesVocabulary
+[       OK ] BpeTokenizerTest.FileRoundTripPreservesVocabulary (0 ms)
+[----------] 7 tests from BpeTokenizerTest (1 ms total)
+
+[----------] Global test environment tear-down
+[==========] 7 tests from 1 test suite ran. (1 ms total)
+[  PASSED  ] 7 tests.
+<end of output>
+Test time =   0.01 sec
+----------------------------------------------------------
+Test Passed.
+"bpe_tokenizer_tests" end time: Oct 07 16:43 EEST
+"bpe_tokenizer_tests" time elapsed: 00:00:00
+----------------------------------------------------------
+
+4/4 Testing: bpe_v2_tests
+4/4 Test: bpe_v2_tests
+Command: "/home/ardis/Desktop/Dom/tokenizer/build/release/tests/test_bpe_v2"
+Directory: /home/ardis/Desktop/Dom/tokenizer/build/release/tests
+"bpe_v2_tests" start time: Oct 07 16:43 EEST
+Output:
+----------------------------------------------------------
+Running main() from /usr/src/debug/gtest/googletest-1.18.0/googletest/src/gtest_main.cc
+[==========] Running 8 tests from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 8 tests from BpeV2Test
+[ RUN      ] BpeV2Test.MatrixRanks
+[       OK ] BpeV2Test.MatrixRanks (3 ms)
+[ RUN      ] BpeV2Test.SpecialTrie
+[       OK ] BpeV2Test.SpecialTrie (3 ms)
+[ RUN      ] BpeV2Test.ExactVsV1MiniVocabs
+[       OK ] BpeV2Test.ExactVsV1MiniVocabs (8 ms)
+[ RUN      ] BpeV2Test.ThreadsAndFilePathDeterminism
+[       OK ] BpeV2Test.ThreadsAndFilePathDeterminism (3 ms)
+[ RUN      ] BpeV2Test.SpecialTokenHandling
+[       OK ] BpeV2Test.SpecialTokenHandling (1 ms)
+[ RUN      ] BpeV2Test.VocabBinRoundTrip
+[       OK ] BpeV2Test.VocabBinRoundTrip (0 ms)
+[ RUN      ] BpeV2Test.LegacyV1BinStillLoads
+[       OK ] BpeV2Test.LegacyV1BinStillLoads (1 ms)
+[ RUN      ] BpeV2Test.RealVocabAgreement
+[       OK ] BpeV2Test.RealVocabAgreement (36 ms)
+[----------] 8 tests from BpeV2Test (58 ms total)
+
+[----------] Global test environment tear-down
+[==========] 8 tests from 1 test suite ran. (58 ms total)
+[  PASSED  ] 8 tests.
+<end of output>
+Test time =   0.06 sec
+----------------------------------------------------------
+Test Passed.
+"bpe_v2_tests" end time: Oct 07 16:43 EEST
+"bpe_v2_tests" time elapsed: 00:00:00
+----------------------------------------------------------
+
+End testing: Oct 07 16:43 EEST

@@ -3,7 +3,7 @@
 // Phase 2: BPE training engine.
 //
 // Pipeline per input line:
-//   1. line -> tokenizer::pre::PreTokenizerPipeline::split(line)
+//   1. line -> domlm::tokenizer::PreTokenizerPipeline::split(line)
 //   2. each chunk -> byte-id sequence (one id per raw byte, base vocab)
 //   3. count adjacent pairs STRICTLY WITHIN each chunk sequence
 //      (never across chunk boundaries)
@@ -23,14 +23,14 @@
 #include "tokenizer/bpe/Vocabulary.hpp"
 #include "tokenizer/pre/PreTokenizerPipeline.hpp"
 
-namespace tokenizer::bpe {
+namespace domlm::tokenizer {
 
 class BpeTrainer {
 public:
     static constexpr std::size_t kDefaultVocabSize = 32000;
 
     explicit BpeTrainer(std::size_t target_vocab_size = kDefaultVocabSize,
-                        tokenizer::pre::PreTokenizerPipeline pipeline = {});
+                        domlm::tokenizer::PreTokenizerPipeline pipeline = {});
 
     BpeTrainer(const BpeTrainer&) = default;
     BpeTrainer& operator=(const BpeTrainer&) = default;
@@ -40,7 +40,7 @@ public:
 
     [[nodiscard]] std::size_t targetVocabSize() const noexcept { return target_; }
     [[nodiscard]] const Vocabulary& vocabulary() const noexcept { return vocab_; }
-    [[nodiscard]] tokenizer::pre::PreTokenizerPipeline& pipeline() noexcept { return pipeline_; }
+    [[nodiscard]] domlm::tokenizer::PreTokenizerPipeline& pipeline() noexcept { return pipeline_; }
 
     /// Train on in-memory lines (one corpus line per element).
     void train(const std::vector<std::string>& lines);
@@ -62,10 +62,10 @@ private:
 
     std::size_t target_;
     Vocabulary vocab_;
-    tokenizer::pre::PreTokenizerPipeline pipeline_;
+    domlm::tokenizer::PreTokenizerPipeline pipeline_;
 
     void runMerges(FreqMap& freq);
     void ingestLine(const std::string& line, FreqMap& freq);
 };
 
-}  // namespace tokenizer::bpe
+}  // namespace domlm::tokenizer

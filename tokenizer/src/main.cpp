@@ -17,12 +17,13 @@
 #include <string>
 #include <string_view>
 
+#include "domlm/Version.hpp"
 #include "tokenizer/pre/PreTokenizerPipeline.hpp"
 
 namespace {
 
-using tokenizer::pre::NormalizationMode;
-using tokenizer::pre::PreTokenizerPipeline;
+using domlm::tokenizer::NormalizationMode;
+using domlm::tokenizer::PreTokenizerPipeline;
 
 // Count Unicode code points in valid UTF-8 (storage is always sanitized).
 std::size_t CountCodePoints(std::string_view s) {
@@ -88,7 +89,8 @@ void PrintUsage(std::string_view prog) {
               << "  " << prog << " --o200k \"hello world\"\n"
               << "  " << prog << " --cl100k \"hello world\"\n"
               << "  " << prog << " [--o200k|--cl100k] [--nfc|--nfd|--nfkc|--nfkd] \"text\"\n"
-              << "  echo \"hello\" | " << prog << "\n";
+              << "  echo \"hello\" | " << prog << "\n"
+              << "  " << prog << " --version\n";
 }
 
 }  // namespace
@@ -103,6 +105,10 @@ int main(int argc, char* argv[]) {
         const std::string_view a(argv[i]);
         if (a == "-h" || a == "--help") {
             PrintUsage(argv[0]);
+            return 0;
+        }
+        if (a == "-v" || a == "--version") {
+            std::cout << "DomLM v" << DOMLM_VERSION_STRING << "\n";
             return 0;
         }
         if (a == "--o200k") {

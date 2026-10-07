@@ -6,7 +6,7 @@
 #include <string_view>
 #include <string>
 
-namespace tokenizer::pre {
+namespace domlm::tokenizer {
 
 /**
  * Thin pipeline composing Unicode normalization and pre-tokenization.
@@ -60,4 +60,4 @@ private:
     PreTokenizer preTokenizer_;
 };
 
-} // namespace tokenizer::pre
+} // namespace domlm::tokenizer
